@@ -1,0 +1,58 @@
+#!/usr/bin/env ruby
+require_relative './lib/water_jug'
+require 'rspec'
+
+def main
+  begin
+    puts "Please enter jug capacity in comma separated e.g 8,5,3"
+    jug_cap = gets.chomp.split(",").map(&:to_i)
+    isValid = validate_input(jug_cap)
+    if !isValid
+      puts "Invalid Input"
+      return
+    end
+
+    puts "Please enter initial jug configuration in comma separated e.g 8,0,0"
+    initial_jug_conf = gets.chomp.split(",").map(&:to_i)
+    isValid = validate_input(initial_jug_conf)
+    if !isValid
+      puts "Invalid Input"
+      return
+    end
+
+    puts "Please enter final jug configuration in comma separated e.g 4,4,0"
+    final_jug_conf = gets.chomp.split(",").map(&:to_i)
+    isValid = validate_input(final_jug_conf)
+    if !isValid
+      puts "Invalid Input"
+      return
+    end
+
+    puts "Jug Capacity is : Jug1 - #{jug_cap[0]} L, Jug2 - #{jug_cap[1]} L, Jug3 - #{jug_cap[2]} L"
+    puts "Jug Initial Configuration is :  Jug1 - #{initial_jug_conf[0]} L, Jug2 - #{initial_jug_conf[1]} L, Jug3 - #{initial_jug_conf[2]} L"
+    puts "Jug Final Configuration is : Jug1 - #{final_jug_conf[0]} L, Jug2 - #{final_jug_conf[1]} L, Jug3 - #{final_jug_conf[2]} L"
+  rescue StandardError => bang
+      puts "Error reading input #{ bang }"
+      return
+  end
+
+  begin
+    WaterJug.new(jug_cap, initial_jug_conf, final_jug_conf).process_input
+  rescue StandardError => bang
+    puts "Error processing input. Error - #{ bang }"
+  end
+
+  puts "Do you want to run test cases? (Y/N)"
+  ans = gets.chomp
+  if ans.downcase == 'y'
+    RSpec::Core::Runner.run([File.dirname(__FILE__) + '/specs'])
+  else
+    return
+  end
+end
+
+def validate_input(input)
+  input.length == 3
+end
+
+main()
