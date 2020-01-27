@@ -30,32 +30,31 @@ class WaterJug
 
       transfer_jug1_to_jug2
 
-      return true if (@jug1_g_cap == @jug1_final_cap) && (@jug2_g_cap == @jug2_final_cap) && (@jug3_g_cap == @jug3_final_cap )
+      return if (@jug1_g_cap == @jug1_final_cap) && (@jug2_g_cap == @jug2_final_cap) && (@jug3_g_cap == @jug3_final_cap )
 
       transfer_jug2_to_jug3
 
-      return true if (@jug1_g_cap == @jug1_final_cap) && (@jug2_g_cap == @jug2_final_cap) && (@jug3_g_cap == @jug3_final_cap )
+      return if (@jug1_g_cap == @jug1_final_cap) && (@jug2_g_cap == @jug2_final_cap) && (@jug3_g_cap == @jug3_final_cap )
 
       transfer_jug3_to_jug1
 
-      return true if (@jug1_g_cap == @jug1_final_cap) && (@jug2_g_cap == @jug2_final_cap) && (@jug3_g_cap == @jug3_final_cap )
+      return if (@jug1_g_cap == @jug1_final_cap) && (@jug2_g_cap == @jug2_final_cap) && (@jug3_g_cap == @jug3_final_cap )
 
       transfer_jug2_to_jug3
 
-      return true if (@jug1_g_cap == @jug1_final_cap) && (@jug2_g_cap == @jug2_final_cap) && (@jug3_g_cap == @jug3_final_cap )
+      return if (@jug1_g_cap == @jug1_final_cap) && (@jug2_g_cap == @jug2_final_cap) && (@jug3_g_cap == @jug3_final_cap )
 
       transfer_jug1_to_jug2
 
-      return true if (@jug1_g_cap == @jug1_final_cap) && (@jug2_g_cap == @jug2_final_cap) && (@jug3_g_cap == @jug3_final_cap )
+      return if (@jug1_g_cap == @jug1_final_cap) && (@jug2_g_cap == @jug2_final_cap) && (@jug3_g_cap == @jug3_final_cap )
 
       transfer_jug2_to_jug3
 
-      return true if (@jug1_g_cap == @jug1_final_cap) && (@jug2_g_cap == @jug2_final_cap) && (@jug3_g_cap == @jug3_final_cap )
+      return if (@jug1_g_cap == @jug1_final_cap) && (@jug2_g_cap == @jug2_final_cap) && (@jug3_g_cap == @jug3_final_cap )
 
       transfer_jug3_to_jug1
 
-      return true if (@jug1_g_cap == @jug1_final_cap) && (@jug2_g_cap == @jug2_final_cap) && (@jug3_g_cap == @jug3_final_cap )
-      return false
+      return if (@jug1_g_cap == @jug1_final_cap) && (@jug2_g_cap == @jug2_final_cap) && (@jug3_g_cap == @jug3_final_cap )
     end
   end
 
